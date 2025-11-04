@@ -20,11 +20,20 @@
       <li><a href="#new-arrivals">New Arrivals</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button id="open-cart" class="btn-shop">
-      <span>🛒 Shop Now</span>
-      <span id="cart-item-count" class="cart-counter">0</span>
-      <span id="checkout-counter" class="checkout-counter">0</span>
-    </button>
+    <div class="nav-right">
+      <!-- Search and Filter -->
+      <div class="search-filter-container">
+        <div class="search-box">
+          <input type="text" id="product-search" placeholder="🔍 Cari produk..." />
+        </div>
+        
+      </div>
+      <button id="open-cart" class="btn-shop">
+        <span>🛒 Shop Now</span>
+        <span id="cart-item-count" class="cart-counter">0</span>
+        <span id="checkout-counter" class="checkout-counter">0</span>
+      </button>
+    </div>
   </nav>
 
   <!-- Bagian Home -->
@@ -258,6 +267,38 @@
     </div>
   </div>
 </div>
+
+  <!-- Chat Support Widget -->
+  <div id="chat-widget" class="chat-widget">
+    <div id="chat-button" class="chat-button">
+      💬
+    </div>
+    <div id="chat-panel" class="chat-panel">
+      <div class="chat-header">
+        <h3>💖 Chat Support</h3>
+        <button id="close-chat">✖</button>
+      </div>
+      <div id="chat-messages" class="chat-messages">
+        <div class="message bot-message">
+          <div class="message-content">
+            <p>Hai! 👋 Saya adalah asisten virtual BraveVerse Beauty. Ada yang bisa saya bantu hari ini?</p>
+          </div>
+        </div>
+      </div>
+      <div class="chat-input-area">
+        <div class="quick-replies">
+          <button class="quick-reply-btn" data-reply="produk">Produk Terbaru</button>
+          <button class="quick-reply-btn" data-reply="diskon">Info Diskon</button>
+          <button class="quick-reply-btn" data-reply="pengiriman">Pengiriman</button>
+          <button class="quick-reply-btn" data-reply="kontak">Kontak Kami</button>
+        </div>
+        <div class="chat-input-container">
+          <input type="text" id="chat-input" placeholder="Ketik pesan Anda..." />
+          <button id="send-message">Kirim</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="E-bussines.js" defer></script>
 </body>

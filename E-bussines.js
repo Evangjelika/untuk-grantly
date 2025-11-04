@@ -5,47 +5,63 @@ let totalCheckoutItems = 0; // Total barang yang sudah di-checkout
 // ===== DATA PRODUK PER BRAND =====
 const brandProducts = {
   'SKIN1004': [
-    { name: 'SKIN1004 Centella Ampoule', price: 193000, image: 'IMG_4689.jpg', description: 'Pure Madagascar Centella Serum' },
-    { name: 'SKIN1004 Madagascar Centella Tone Brightening Cream', price: 162000, image: 'IMG_4694.jpg', description: 'Boosting Shot Ampoule' },
-    { name: 'SKIN1004 Centella Toner', price: 125000, image: 'IMG_4695.jpg', description: 'Centella Asiatica Toner' },
-    { name: 'SKIN1004 Madagascar Centella Air-Fit Suncream Light', price: 152000, image: 'IMG_4707.jpg', description: 'Suncream Light SPF30 PA++++' }
+    { name: 'SKIN1004 Centella Ampoule', price: 193000, image: 'IMG_4689.jpg', description: 'Pure Madagascar Centella Serum', skinTypes: ['kering', 'sensitif', 'berjerawat'] },
+    { name: 'SKIN1004 Madagascar Centella Tone Brightening Cream', price: 162000, image: 'IMG_4694.jpg', description: 'Boosting Shot Ampoule', skinTypes: ['kering', 'normal', 'kombinasi'] },
+    { name: 'SKIN1004 Centella Toner', price: 125000, image: 'IMG_4695.jpg', description: 'Centella Asiatica Toner', skinTypes: ['kering', 'sensitif', 'berjerawat'] },
+    { name: 'SKIN1004 Madagascar Centella Air-Fit Suncream Light', price: 152000, image: 'IMG_4707.jpg', description: 'Suncream Light SPF30 PA++++', skinTypes: ['kering', 'normal', 'sensitif', 'kombinasi'] }
   ],
   'LANEIGE': [
-    { name: 'LANEIGE Water Sleeping Mask', price: 470000, image: 'IMG_4708.JPG', description: 'Water Sleeping Mask_EX' },
-    { name: 'LANEIGE Water Bank Blue Hyaluronic Moisture Cream', price: 552000, image: 'IMG_4709.JPG', description: 'Barier Strengthening Cream' },
-    { name: 'LANEIGE Sleeping Mask', price: 312000, image: 'IMG_4710.JPG', description: 'Water Sleeping Mask' },
-    { name: 'LANEIGE Water Bank UV Barrier Sunscreen SPF 50+ PA++++', price: 410000, image: 'IMG_4711.JPG', description: 'Berrier-shield sunscreen' }
+    { name: 'LANEIGE Water Sleeping Mask', price: 470000, image: 'IMG_4708.JPG', description: 'Water Sleeping Mask_EX', skinTypes: ['kering', 'normal', 'kombinasi'] },
+    { name: 'LANEIGE Water Bank Blue Hyaluronic Moisture Cream', price: 552000, image: 'IMG_4709.JPG', description: 'Barier Strengthening Cream', skinTypes: ['kering', 'normal', 'sensitif'] },
+    { name: 'LANEIGE Sleeping Mask', price: 312000, image: 'IMG_4710.JPG', description: 'Water Sleeping Mask', skinTypes: ['kering', 'normal', 'kombinasi'] },
+    { name: 'LANEIGE Water Bank UV Barrier Sunscreen SPF 50+ PA++++', price: 410000, image: 'IMG_4711.JPG', description: 'Berrier-shield sunscreen', skinTypes: ['kering', 'normal', 'berminyak', 'kombinasi'] }
   ],
   'COSRX': [
-    { name: 'COSRX Advanced Snail 92 All in One Cream', price: 246750, image: '21005-large_default.jpg', description: 'COSRX Advanced Snail 92 All in One Cream from Korea is a Moisturizer enriched with 92% of snail mucin to give skin nourishment' },
-    { name: 'COSRX Aloe Soothing Sun Cream SPF 50+ PA+++', price: 156000, image: '26099-large_default.jpg', description: 'Sun Cream SPF 50+ PA+++' },
-    { name: 'COSRX Full Fit Propolis Light Ampoule', price: 370000, image: '66841548107-1597395513334.avif', description: 'COSRX Full Fit Propolis Light Ampoule' },
-    { name: 'COSRX AHA/BHA Clarifying Treatment Toner', price: 200000, image: '35760-large_default.jpg', description: 'AHA/BHA Clarifying Treatment Toner' }
+    { name: 'COSRX Advanced Snail 92 All in One Cream', price: 246750, image: '21005-large_default.jpg', description: 'COSRX Advanced Snail 92 All in One Cream from Korea is a Moisturizer enriched with 92% of snail mucin to give skin nourishment', skinTypes: ['kering', 'sensitif', 'berjerawat'] },
+    { name: 'COSRX Aloe Soothing Sun Cream SPF 50+ PA+++', price: 156000, image: '26099-large_default.jpg', description: 'Sun Cream SPF 50+ PA+++', skinTypes: ['berjerawat', 'sensitif', 'berminyak'] },
+    { name: 'COSRX Full Fit Propolis Light Ampoule', price: 370000, image: '66841548107-1597395513334.avif', description: 'COSRX Full Fit Propolis Light Ampoule', skinTypes: ['kering', 'normal', 'kombinasi'] },
+    { name: 'COSRX AHA/BHA Clarifying Treatment Toner', price: 200000, image: '35760-large_default.jpg', description: 'AHA/BHA Clarifying Treatment Toner', skinTypes: ['berminyak', 'berjerawat', 'kombinasi'] }
   ],
   'Beauty of Joseon': [
-    { name: 'Beauty of Joseon Ginseng Essence Water', price: 250000, image: '382a98f5-06ab-45c8-b0ec-fdf88395a7d2-.avif', description: 'Toner ini mengandung bahan utama Ginseng Water yang dapat memberikan kelembapan dan nutrisi hingga ke dalam kulit, agar kelembapan kulit terjaga sepanjang hari' },
-    { name: 'Beauty of Joseon Dynasty Cream', price: 227679, image: '1551fd7f-5dd1-43ba-b013-979be756b04b-.avif', description: 'Honey Glow Brightening Serum' },
-    { name: 'Beauty of Joseon Revive Eye Cream: Ginseng + Retinal', price: 231000, image: '6935f3e4-b49a-4bb1-b263-59f96cf2a387-.avif', description: 'Revive Eye Cream dapat merawat kulit di area mata dengan memadukan bahan Ginseng Extract dan Retinal. Ginseng adalah bahan herbal yang kaya akan saponin yang mampu untuk menyamarkan garis-garis halus.' },
-    { name: 'Beauty of Joseon Calming Serum: Green Tea + Panthenol', price: 180000, image: '311847bc-21cd-4d93-95a1-3b2c5f4324bf-image-0-1719802733370.avif', description: 'Calming Serum : Green Tea + Panthenol diformulasikan untuk Membantu menyejukkan kulit yang teriritasi ringan akibat paparan sinar UV atau faktor eksternal lainnya' }
+    { name: 'Beauty of Joseon Ginseng Essence Water', price: 250000, image: '382a98f5-06ab-45c8-b0ec-fdf88395a7d2-.avif', description: 'Toner ini mengandung bahan utama Ginseng Water yang dapat memberikan kelembapan dan nutrisi hingga ke dalam kulit, agar kelembapan kulit terjaga sepanjang hari', skinTypes: ['kering', 'normal', 'sensitif'] },
+    { name: 'Beauty of Joseon Dynasty Cream', price: 227679, image: '1551fd7f-5dd1-43ba-b013-979be756b04b-.avif', description: 'Honey Glow Brightening Serum', skinTypes: ['kering', 'normal', 'kombinasi'] },
+    { name: 'Beauty of Joseon Revive Eye Cream: Ginseng + Retinal', price: 231000, image: '6935f3e4-b49a-4bb1-b263-59f96cf2a387-.avif', description: 'Revive Eye Cream dapat merawat kulit di area mata dengan memadukan bahan Ginseng Extract dan Retinal. Ginseng adalah bahan herbal yang kaya akan saponin yang mampu untuk menyamarkan garis-garis halus.', skinTypes: ['kering', 'normal', 'sensitif', 'kombinasi'] },
+    { name: 'Beauty of Joseon Calming Serum: Green Tea + Panthenol', price: 180000, image: '311847bc-21cd-4d93-95a1-3b2c5f4324bf-image-0-1719802733370.avif', description: 'Calming Serum : Green Tea + Panthenol diformulasikan untuk Membantu menyejukkan kulit yang teriritasi ringan akibat paparan sinar UV atau faktor eksternal lainnya', skinTypes: ['sensitif', 'berjerawat', 'berminyak'] }
   ],
   'ROUND LAB': [
-    { name: 'ROUND LAB Sunscreen', price: 135000, image: 'IMG_4144.jpg', description: 'Birch Juice Moisturizing Tone-Up Sunscreen' },
-    { name: 'ROUND LAB Toner', price: 125000, image: 'IMG_4144.jpg', description: 'Birch Juice Moisturizing Toner' },
-    { name: 'ROUND LAB Serum', price: 145000, image: 'IMG_4144.jpg', description: 'Dokdo Serum with Niacinamide' },
-    { name: 'ROUND LAB Cleanser', price: 115000, image: 'IMG_4144.jpg', description: '1025 Dokdo Cleanser' }
+    { name: 'ROUND LAB Sunscreen', price: 135000, image: 'IMG_4144.jpg', description: 'Birch Juice Moisturizing Tone-Up Sunscreen', skinTypes: ['kering', 'normal', 'berminyak', 'kombinasi'] },
+    { name: 'ROUND LAB Toner', price: 125000, image: 'IMG_4144.jpg', description: 'Birch Juice Moisturizing Toner', skinTypes: ['kering', 'normal', 'sensitif'] },
+    { name: 'ROUND LAB Serum', price: 145000, image: 'IMG_4144.jpg', description: 'Dokdo Serum with Niacinamide', skinTypes: ['berminyak', 'berjerawat', 'kombinasi'] },
+    { name: 'ROUND LAB Cleanser', price: 115000, image: 'IMG_4144.jpg', description: '1025 Dokdo Cleanser', skinTypes: ['berminyak', 'berjerawat', 'normal'] }
   ],
   'EMBRYOLISSE': [
-    { name: 'EMBRYOLISSE Sun Stick', price: 155000, image: 'IMG_4158.jpg', description: 'Sun Stick SPF50+' },
-    { name: 'EMBRYOLISSE Lait-Crème', price: 165000, image: 'IMG_4158.jpg', description: 'Lait-Crème Concentré Moisturizer' },
-    { name: 'EMBRYOLISSE Eye Cream', price: 175000, image: 'IMG_4158.jpg', description: 'Eye Contour Cream' },
-    { name: 'EMBRYOLISSE Serum', price: 185000, image: 'IMG_4158.jpg', description: 'Brightening Serum' }
+    { name: 'EMBRYOLISSE Sun Stick', price: 155000, image: 'IMG_4158.jpg', description: 'Sun Stick SPF50+', skinTypes: ['kering', 'normal', 'sensitif', 'kombinasi'] },
+    { name: 'EMBRYOLISSE Lait-Crème', price: 165000, image: 'IMG_4158.jpg', description: 'Lait-Crème Concentré Moisturizer', skinTypes: ['kering', 'normal', 'sensitif'] },
+    { name: 'EMBRYOLISSE Eye Cream', price: 175000, image: 'IMG_4158.jpg', description: 'Eye Contour Cream', skinTypes: ['kering', 'normal', 'sensitif', 'kombinasi'] },
+    { name: 'EMBRYOLISSE Serum', price: 185000, image: 'IMG_4158.jpg', description: 'Brightening Serum', skinTypes: ['kering', 'normal', 'kombinasi'] }
   ],
   'Rice Toner': [
-    { name: 'Rice Toner Pad', price: 125000, image: 'IMG_4157.jpg', description: 'Wake up with deeply hydrated, dewy skin' },
-    { name: 'Rice Toner Essence', price: 130000, image: 'IMG_4157.jpg', description: 'Rice & Ceramide Moisturizing Toner' },
-    { name: 'Rice Cleanser', price: 110000, image: 'IMG_4157.jpg', description: 'Deep Cleansing Rice Foam Cleanser' }
+    { name: 'Rice Toner Pad', price: 125000, image: 'IMG_4157.jpg', description: 'Wake up with deeply hydrated, dewy skin', skinTypes: ['kering', 'normal', 'sensitif'] },
+    { name: 'Rice Toner Essence', price: 130000, image: 'IMG_4157.jpg', description: 'Rice & Ceramide Moisturizing Toner', skinTypes: ['kering', 'normal', 'sensitif'] },
+    { name: 'Rice Cleanser', price: 110000, image: 'IMG_4157.jpg', description: 'Deep Cleansing Rice Foam Cleanser', skinTypes: ['berminyak', 'berjerawat', 'normal'] }
   ]
 };
+
+// ===== ALL PRODUCTS ARRAY FOR SEARCH =====
+let allProducts = [];
+
+// Function to flatten brand products into searchable array
+function initializeAllProducts() {
+  allProducts = [];
+  Object.keys(brandProducts).forEach(brand => {
+    brandProducts[brand].forEach(product => {
+      allProducts.push({
+        ...product,
+        brand: brand
+      });
+    });
+  });
+}
 
 // Load total checkout dari localStorage saat halaman dimuat
 function loadCheckoutCounter() {
@@ -591,4 +607,230 @@ document.addEventListener('DOMContentLoaded', () => {
   if (closeBrandBtn) {
     closeBrandBtn.addEventListener('click', closeBrandProducts);
   }
+});
+
+// ===== CHAT SUPPORT FUNCTIONALITY =====
+// Chat responses database
+const chatResponses = {
+  produk: "🌸 Kami memiliki berbagai produk skincare terbaru seperti Hydra Glow Serum, Radiant Night Cream, dan banyak lagi! Kunjungi bagian 'New Arrivals' untuk melihat koleksi terbaru kami. 💖",
+  diskon: "🎉 Saat ini kami sedang memberikan diskon hingga 35% + free gift untuk pembelian pertama! Jangan lewatkan kesempatan ini untuk mendapatkan produk skincare impian Anda. ✨",
+  pengiriman: "🚚 Kami mengirim ke seluruh Indonesia dengan berbagai pilihan kurir (JNE, TIKI, POS Indonesia). Pengiriman gratis untuk pembelian di atas Rp 500.000! 📦",
+  kontak: "📞 Hubungi kami di:\nEmail: support@BraveVerse.com\nInstagram: @BraveVerse.official\nWhatsApp: +62 812-3456-7890\nKami siap membantu Anda 24/7! 💕",
+  default: "Terima kasih atas pertanyaannya! 💖 Untuk informasi lebih lanjut, silakan hubungi tim support kami di support@BraveVerse.com atau kunjungi halaman Contact. Kami akan dengan senang hati membantu Anda! 🌸"
+};
+
+// Chat state
+let chatMessages = [];
+let isChatOpen = false;
+
+// Initialize chat
+function initChat() {
+  const chatButton = document.getElementById('chat-button');
+  const closeChatBtn = document.getElementById('close-chat');
+  const sendMessageBtn = document.getElementById('send-message');
+  const chatInput = document.getElementById('chat-input');
+  const chatPanel = document.getElementById('chat-panel');
+  const quickReplyBtns = document.querySelectorAll('.quick-reply-btn');
+
+  // Toggle chat panel
+  chatButton.addEventListener('click', () => {
+    isChatOpen = !isChatOpen;
+    chatPanel.classList.toggle('active');
+    if (isChatOpen) {
+      chatInput.focus();
+      scrollToBottom();
+    }
+  });
+
+  // Close chat
+  closeChatBtn.addEventListener('click', () => {
+    isChatOpen = false;
+    chatPanel.classList.remove('active');
+  });
+
+  // Send message on button click
+  sendMessageBtn.addEventListener('click', sendMessage);
+
+  // Send message on Enter key
+  chatInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      sendMessage();
+    }
+  });
+
+  // Quick reply buttons
+  quickReplyBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const replyType = btn.dataset.reply;
+      handleQuickReply(replyType);
+    });
+  });
+}
+
+// Send user message
+function sendMessage() {
+  const chatInput = document.getElementById('chat-input');
+  const message = chatInput.value.trim();
+
+  if (message === '') return;
+
+  // Add user message
+  addMessage(message, 'user');
+
+  // Clear input
+  chatInput.value = '';
+
+  // Generate bot response
+  setTimeout(() => {
+    const response = generateResponse(message);
+    addMessage(response, 'bot');
+  }, 500);
+}
+
+// Handle quick reply
+function handleQuickReply(replyType) {
+  const response = chatResponses[replyType] || chatResponses.default;
+  addMessage(response, 'bot');
+}
+
+// Generate bot response based on user message
+function generateResponse(message) {
+  const lowerMessage = message.toLowerCase();
+
+  // Check for keywords
+  if (lowerMessage.includes('produk') || lowerMessage.includes('product') || lowerMessage.includes('item')) {
+    return chatResponses.produk;
+  } else if (lowerMessage.includes('diskon') || lowerMessage.includes('promo') || lowerMessage.includes('sale') || lowerMessage.includes('discount')) {
+    return chatResponses.diskon;
+  } else if (lowerMessage.includes('kirim') || lowerMessage.includes('pengiriman') || lowerMessage.includes('shipping') || lowerMessage.includes('delivery')) {
+    return chatResponses.pengiriman;
+  } else if (lowerMessage.includes('kontak') || lowerMessage.includes('contact') || lowerMessage.includes('hubungi') || lowerMessage.includes('call')) {
+    return chatResponses.kontak;
+  } else if (lowerMessage.includes('halo') || lowerMessage.includes('hi') || lowerMessage.includes('hai') || lowerMessage.includes('hello')) {
+    return "Halo! 👋 Selamat datang di BraveVerse Beauty! Ada yang bisa saya bantu hari ini? 💖";
+  } else if (lowerMessage.includes('terima kasih') || lowerMessage.includes('thanks') || lowerMessage.includes('thank you')) {
+    return "Sama-sama! 💕 Jika ada pertanyaan lain, jangan ragu untuk bertanya. Semoga hari Anda menyenangkan! 🌸";
+  } else {
+    return chatResponses.default;
+  }
+}
+
+// Add message to chat
+function addMessage(content, sender) {
+  const chatMessages = document.getElementById('chat-messages');
+  const messageDiv = document.createElement('div');
+  messageDiv.className = `message ${sender}-message`;
+
+  const messageContent = document.createElement('div');
+  messageContent.className = 'message-content';
+
+  // Handle multiline messages
+  const lines = content.split('\n');
+  lines.forEach((line, index) => {
+    const p = document.createElement('p');
+    p.textContent = line;
+    if (index < lines.length - 1) {
+      p.style.marginBottom = '8px';
+    }
+    messageContent.appendChild(p);
+  });
+
+  messageDiv.appendChild(messageContent);
+  chatMessages.appendChild(messageDiv);
+
+  scrollToBottom();
+}
+
+// Scroll to bottom of chat
+function scrollToBottom() {
+  const chatMessages = document.getElementById('chat-messages');
+  setTimeout(() => {
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }, 100);
+}
+
+// ===== SEARCH AND FILTER FUNCTIONALITY =====
+function initSearchAndFilter() {
+  const searchInput = document.getElementById('product-search');
+  const skinTypeSelect = document.getElementById('skin-type-select');
+
+  // Initialize all products array
+  initializeAllProducts();
+
+  // Add event listeners
+  searchInput.addEventListener('input', filterProducts);
+  skinTypeSelect.addEventListener('change', filterProducts);
+}
+
+// Filter products based on search and skin type
+function filterProducts() {
+  const searchInput = document.getElementById('product-search');
+  const skinTypeSelect = document.getElementById('skin-type-select');
+
+  const searchTerm = searchInput.value.toLowerCase().trim();
+  const selectedSkinType = skinTypeSelect.value;
+
+  // Get all product cards
+  const productCards = document.querySelectorAll('.product-card');
+
+  productCards.forEach(card => {
+    const productName = card.querySelector('h3').textContent.toLowerCase();
+    const productDesc = card.querySelector('p').textContent.toLowerCase();
+    const brandName = card.closest('.products')?.querySelector('h2')?.textContent.toLowerCase() || '';
+
+    // Find the product data to check skin types
+    const productData = findProductData(productName, brandName);
+
+    // Check search term match
+    const matchesSearch = searchTerm === '' ||
+      productName.includes(searchTerm) ||
+      productDesc.includes(searchTerm) ||
+      brandName.includes(searchTerm);
+
+    // Check skin type match
+    const matchesSkinType = selectedSkinType === '' ||
+      (productData && productData.skinTypes && productData.skinTypes.includes(selectedSkinType));
+
+    // Show/hide card based on filters
+    if (matchesSearch && matchesSkinType) {
+      card.style.display = 'block';
+      card.style.animation = 'fadeInUp 0.5s ease-out';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+
+  // Update results count
+  updateResultsCount();
+}
+
+// Find product data by name and brand
+function findProductData(productName, brandName) {
+  // Search in allProducts array
+  return allProducts.find(product =>
+    product.name.toLowerCase().includes(productName) ||
+    productName.includes(product.name.toLowerCase().split(' ').slice(-2).join(' ')) // Match last few words
+  );
+}
+
+// Update results count display
+function updateResultsCount() {
+  const visibleCards = document.querySelectorAll('.product-card[style*="display: block"]');
+  const totalCards = document.querySelectorAll('.product-card');
+
+  // You can add a results counter element if needed
+  console.log(`Showing ${visibleCards.length} of ${totalCards.length} products`);
+}
+
+// Clear filters
+function clearFilters() {
+  document.getElementById('product-search').value = '';
+  document.getElementById('skin-type-select').value = '';
+  filterProducts();
+}
+
+// Initialize chat when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  initChat();
+  initSearchAndFilter();
 });
