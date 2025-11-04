@@ -1,305 +1,407 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GlowSkin – Skincare & Beauty</title>
-  <link rel="stylesheet" href="E-bussines.css">
-  <!-- Midtrans SDK -->
-  <script type="text/javascript" src="https://api.midtrans.com/v2/assets/js/midtrans-new-3ds.min.js" data-client-key="SB-Mid-client-YourClientKey"></script>
-</head>
-<body>
-
-  <!-- Navigasi -->
-  <nav class="navbar">
-    <div class="logo">BraveVerse'Beauty</div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#brands">Brands</a></li>
-      <li><a href="#best-deals">Best Deals</a></li>
-      <li><a href="#new-arrivals">New Arrivals</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="nav-right">
-      <!-- Search and Filter -->
-      <div class="search-filter-container">
-        <div class="search-box">
-          <input type="text" id="product-search" placeholder="🔍 Cari produk..." />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GlowSkin – Skincare & Beauty</title>
+    <link rel="stylesheet" href="E-bussines.css" />
+    <!-- Midtrans SDK -->
+    <script
+      type="text/javascript"
+      src="https://app.sandbox.midtrans.com/snap/snap.js"
+      data-client-key="Mid-client-OFMXhJ7GUq86s-Ug"
+    ></script>
+    >
+  </head>
+  <body>
+    <!-- Navigasi -->
+    <nav class="navbar">
+      <div class="logo">BraveVerse'Beauty</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#brands">Brands</a></li>
+        <li><a href="#best-deals">Best Deals</a></li>
+        <li><a href="#new-arrivals">New Arrivals</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <!-- Search and Filter -->
+        <div class="search-filter-container">
+          <div class="search-box">
+            <input
+              type="text"
+              id="product-search"
+              placeholder="🔍 Cari produk..."
+            />
+          </div>
         </div>
-        
+        <button id="open-cart" class="btn-shop">
+          <span>🛒 Shop Now</span>
+          <span id="cart-item-count" class="cart-counter">0</span>
+          <span id="checkout-counter" class="checkout-counter">0</span>
+        </button>
       </div>
-      <button id="open-cart" class="btn-shop">
-        <span>🛒 Shop Now</span>
-        <span id="cart-item-count" class="cart-counter">0</span>
-        <span id="checkout-counter" class="checkout-counter">0</span>
-      </button>
-    </div>
-  </nav>
+    </nav>
 
-  <!-- Bagian Home -->
-  <section id="home" class="banner">
-    <div class="banner-content">
-      <h1>🌸 Be Bold. Be You. Be BraveVerse 🌸</h1>
-      <p>Discover your skin’s new best friend — glowing, hydrated, and healthy!</p>
-      <p><strong>Disc. up to 35% + Free Gift 🎁</strong></p>
-    </div>
-  </section>
-
-  <!-- Bagian Best Deals -->
-  <section id="best-deals" class="products">
-    <h2>🌿 Our Best Sellers</h2>
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="Hyaluronic Acid Hydra Power Essence.WEBP" alt="Hydra Glow Serum">
-        <h3>Hydra Glow Serum</h3>
-        <p>Deep hydration for radiant skin</p>
-        <div class="product-price">Rp 130.000</div>
-        <button class="btn-brand add-to-cart" data-name="Hydra Glow Serum" data-price="130000">Tambahkan ke Keranjang</button>
+    <!-- Bagian Home -->
+    <section id="home" class="banner">
+      <div class="banner-content">
+        <h1>🌸 Be Bold. Be You. Be BraveVerse 🌸</h1>
+        <p>
+          Discover your skin’s new best friend — glowing, hydrated, and healthy!
+        </p>
+        <p><strong>Disc. up to 35% + Free Gift 🎁</strong></p>
       </div>
+    </section>
 
-      <div class="product-card">
-        <img src="IMG_4128.PNG" alt="Pure Clean Face Wash">
-        <h3>Pure Clean Face Wash</h3>
-        <p>Gentle cleansing, refreshing result</p>
-        <div class="product-price">Rp 110.000</div>
-        <button class="btn-brand add-to-cart" data-name="Face Wash" data-price="110000">Tambahkan ke Keranjang</button>
+    <!-- Bagian Best Deals -->
+    <section id="best-deals" class="products">
+      <h2>🌿 Our Best Sellers</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img
+            src="image/Hyaluronic Acid Hydra Power Essence.WEBP"
+            alt="Hydra Glow Serum"
+          />
+          <h3>Hydra Glow Serum</h3>
+          <p>Deep hydration for radiant skin</p>
+          <div class="product-price">Rp 130.000</div>
+          <button
+            class="btn-brand add-to-cart"
+            data-name="Hydra Glow Serum"
+            data-price="130000"
+          >
+            Tambahkan ke Keranjang
+          </button>
+        </div>
+
+        <div class="product-card">
+          <img src="image/IMG_4128.PNG" alt="Pure Clean Face Wash" />
+          <h3>Pure Clean Face Wash</h3>
+          <p>Gentle cleansing, refreshing result</p>
+          <div class="product-price">Rp 110.000</div>
+          <button
+            class="btn-brand add-to-cart"
+            data-name="Face Wash"
+            data-price="110000"
+          >
+            Tambahkan ke Keranjang
+          </button>
+        </div>
+
+        <div class="product-card">
+          <img src="image/IMG_4129.JPG" alt="Radiant Night Cream" />
+          <h3>Radiant Night Cream</h3>
+          <p>Wake up with glowing skin</p>
+          <div class="product-price">Rp 160.000</div>
+          <button
+            class="btn-brand add-to-cart"
+            data-name="Night Cream"
+            data-price="160000"
+          >
+            Tambahkan ke Keranjang
+          </button>
+        </div>
       </div>
+    </section>
 
-      <div class="product-card">
-        <img src="IMG_4129.JPG" alt="Radiant Night Cream">
-        <h3>Radiant Night Cream</h3>
-        <p>Wake up with glowing skin</p>
-        <div class="product-price">Rp 160.000</div>
-        <button class="btn-brand add-to-cart" data-name="Night Cream" data-price="160000">Tambahkan ke Keranjang</button>
+    <!-- Bagian Brands -->
+    <section id="brands" class="brands">
+      <h2>🌸 Popular Brands</h2>
+      <p>
+        Discover your favorite Korean skincare brands — trusted by millions for
+        glowing, healthy skin!
+      </p>
+
+      <div class="brand-grid">
+        <div class="brand-card clickable-brand" data-brand="SKIN1004">
+          <img src="image/IMG_4135.PNG" alt="SKIN1004" />
+          <h3>SKIN1004</h3>
+          <p>
+            Known for its pure Madagascar Centella — calming, healing, and
+            protecting your skin barrier.
+          </p>
+        </div>
+
+        <div class="brand-card clickable-brand" data-brand="LANEIGE">
+          <img src="image/IMG_4139.JPG" alt="LANEIGE" />
+          <h3>LANEIGE</h3>
+          <p>
+            Hydration experts powered by Water Science™ for soft, dewy, and
+            glowing skin.
+          </p>
+        </div>
+
+        <div class="brand-card clickable-brand" data-brand="COSRX">
+          <img src="image/IMG_4141.JPG" alt="COSRX" />
+          <h3>COSRX</h3>
+          <p>
+            Minimal ingredients, maximum results. Perfect for sensitive,
+            acne-prone skin.
+          </p>
+        </div>
+
+        <div class="brand-card clickable-brand" data-brand="Beauty of Joseon">
+          <img src="image/IMG_4142.AVIF" alt="Beauty of Joseon" />
+          <h3>Beauty of Joseon</h3>
+          <p>
+            Inspired by Korean heritage — timeless beauty using natural hanbang
+            ingredients.
+          </p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Bagian Brands -->
-  <section id="brands" class="brands">
-    <h2>🌸 Popular Brands</h2>
-    <p>Discover your favorite Korean skincare brands — trusted by millions for glowing, healthy skin!</p>
+    <!-- Section untuk menampilkan produk brand yang dipilih -->
+    <section id="brand-products" class="products" style="display: none">
+      <button id="close-brand-products" class="close-brand-btn">✖ Tutup</button>
+      <h2 id="brand-products-title">Produk Brand</h2>
+      <div id="brand-products-grid" class="product-grid"></div>
+    </section>
 
-    <div class="brand-grid">
-      <div class="brand-card clickable-brand" data-brand="SKIN1004">
-        <img src="IMG_4135.PNG" alt="SKIN1004">
-        <h3>SKIN1004</h3>
-        <p>Known for its pure Madagascar Centella — calming, healing, and protecting your skin barrier.</p>
+    <!-- 🌸 New Arrivals -->
+    <section id="new-arrivals" class="brands">
+      <h2>🌸 New Arrivals</h2>
+      <p>Freshly launched skincare picks — just for you!</p>
+
+      <div class="brand-grid">
+        <div class="brand-card">
+          <img src="image/IMG_4143.jpg" alt="SKIN1004 Boosting Ampoule" />
+          <h3>SKIN1004</h3>
+          <p>Boosting Shot Ampoule</p>
+          <div class="product-price">Rp 145.000</div>
+          <button
+            class="btn-brand add-to-cart"
+            data-name="Boosting Shot Ampoule"
+            data-price="145000"
+          >
+            Tambahkan ke Keranjang
+          </button>
+        </div>
+
+        <div class="brand-card">
+          <img src="image/IMG_4144.jpg" alt="ROUND LAB Sunscreen" />
+          <h3>ROUND LAB</h3>
+          <p>Birch Juice Moisturizing Tone-Up Sunscreen</p>
+          <div class="product-price">Rp 135.000</div>
+          <button
+            class="btn-brand add-to-cart"
+            data-name="ROUND LAB Sunscreen"
+            data-price="135000"
+          >
+            Tambahkan ke Keranjang
+          </button>
+        </div>
+
+        <div class="brand-card">
+          <img src="image/IMG_4157.jpg" alt="Rice Toner Pad" />
+          <h3>Rice Toner Pad</h3>
+          <p>Wake up with deeply hydrated, dewy skin</p>
+          <div class="product-price">Rp 125.000</div>
+          <button
+            class="btn-brand add-to-cart"
+            data-name="Rice Toner Pad"
+            data-price="125000"
+          >
+            Tambahkan ke Keranjang
+          </button>
+        </div>
+
+        <div class="brand-card">
+          <img src="image/IMG_4158.jpg" alt="EMBRYOLISSE Sun Stick" />
+          <h3>EMBRYOLISSE</h3>
+          <p>Sun Stick SPF50+</p>
+          <div class="product-price">Rp 155.000</div>
+          <button
+            class="btn-brand add-to-cart"
+            data-name="EMBRYOLISSE Sun Stick"
+            data-price="155000"
+          >
+            Tambahkan ke Keranjang
+          </button>
+        </div>
+
+        <div class="brand-card">
+          <img
+            src="image/IMG_4159.jpg"
+            alt="BEAUTY OF JOSEON Honey Glow Serum"
+          />
+          <h3>BEAUTY OF JOSEON</h3>
+          <p>Honey Glow Brightening Serum</p>
+          <div class="product-price">Rp 150.000</div>
+          <button
+            class="btn-brand add-to-cart"
+            data-name="Honey Glow Brightening Serum"
+            data-price="150000"
+          >
+            Tambahkan ke Keranjang
+          </button>
+        </div>
       </div>
+    </section>
 
-      <div class="brand-card clickable-brand" data-brand="LANEIGE">
-        <img src="IMG_4139.JPG" alt="LANEIGE">
-        <h3>LANEIGE</h3>
-        <p>Hydration experts powered by Water Science™ for soft, dewy, and glowing skin.</p>
+    <!-- Bagian Contact -->
+    <section id="contact" class="contact">
+      <h2>📞 Contact Us</h2>
+      <p>Email: support@BraveVerse.com</p>
+      <p>Instagram: @BraveVerse.official</p>
+    </section>
+
+    <footer>
+      <p>© 2025 GlowSkin Beauty Store | Love Your Skin 💖</p>
+    </footer>
+
+    <!-- Panel Keranjang -->
+    <div id="cart-panel" class="cart-panel">
+      <div class="cart-header">
+        <h3>🛍️ Keranjang Belanja</h3>
+        <button id="close-cart">✖</button>
       </div>
-
-      <div class="brand-card clickable-brand" data-brand="COSRX">
-        <img src="IMG_4141.JPG" alt="COSRX">
-        <h3>COSRX</h3>
-        <p>Minimal ingredients, maximum results. Perfect for sensitive, acne-prone skin.</p>
-      </div>
-
-      <div class="brand-card clickable-brand" data-brand="Beauty of Joseon">
-        <img src="IMG_4142.AVIF" alt="Beauty of Joseon">
-        <h3>Beauty of Joseon</h3>
-        <p>Inspired by Korean heritage — timeless beauty using natural hanbang ingredients.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section untuk menampilkan produk brand yang dipilih -->
-  <section id="brand-products" class="products" style="display: none;">
-    <button id="close-brand-products" class="close-brand-btn">✖ Tutup</button>
-    <h2 id="brand-products-title">Produk Brand</h2>
-    <div id="brand-products-grid" class="product-grid"></div>
-  </section>
-
-  <!-- 🌸 New Arrivals -->
-  <section id="new-arrivals" class="brands">
-    <h2>🌸 New Arrivals</h2>
-    <p>Freshly launched skincare picks — just for you!</p>
-
-    <div class="brand-grid">
-      <div class="brand-card">
-        <img src="IMG_4143.jpg" alt="SKIN1004 Boosting Ampoule">
-        <h3>SKIN1004</h3>
-        <p>Boosting Shot Ampoule</p>
-        <div class="product-price">Rp 145.000</div>
-        <button class="btn-brand add-to-cart" data-name="Boosting Shot Ampoule" data-price="145000">Tambahkan ke Keranjang</button>
-      </div>
-
-      <div class="brand-card">
-        <img src="IMG_4144.jpg" alt="ROUND LAB Sunscreen">
-        <h3>ROUND LAB</h3>
-        <p>Birch Juice Moisturizing Tone-Up Sunscreen</p>
-        <div class="product-price">Rp 135.000</div>
-        <button class="btn-brand add-to-cart" data-name="ROUND LAB Sunscreen" data-price="135000">Tambahkan ke Keranjang</button>
-      </div>
-
-      <div class="brand-card">
-        <img src="IMG_4157.jpg" alt="Rice Toner Pad">
-        <h3>Rice Toner Pad</h3>
-        <p>Wake up with deeply hydrated, dewy skin</p>
-        <div class="product-price">Rp 125.000</div>
-        <button class="btn-brand add-to-cart" data-name="Rice Toner Pad" data-price="125000">Tambahkan ke Keranjang</button>
-      </div>
-
-      <div class="brand-card">
-        <img src="IMG_4158.jpg" alt="EMBRYOLISSE Sun Stick">
-        <h3>EMBRYOLISSE</h3>
-        <p>Sun Stick SPF50+</p>
-        <div class="product-price">Rp 155.000</div>
-        <button class="btn-brand add-to-cart" data-name="EMBRYOLISSE Sun Stick" data-price="155000">Tambahkan ke Keranjang</button>
-      </div>
-
-      <div class="brand-card">
-        <img src="IMG_4159.jpg" alt="BEAUTY OF JOSEON Honey Glow Serum">
-        <h3>BEAUTY OF JOSEON</h3>
-        <p>Honey Glow Brightening Serum</p>
-        <div class="product-price">Rp 150.000</div>
-        <button class="btn-brand add-to-cart" data-name="Honey Glow Brightening Serum" data-price="150000">Tambahkan ke Keranjang</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Bagian Contact -->
-  <section id="contact" class="contact">
-    <h2>📞 Contact Us</h2>
-    <p>Email: support@BraveVerse.com</p>
-    <p>Instagram: @BraveVerse.official</p>
-  </section>
-
-  <footer>
-    <p>© 2025 GlowSkin Beauty Store | Love Your Skin 💖</p>
-  </footer>
-
-  <!-- Panel Keranjang -->
-  <div id="cart-panel" class="cart-panel">
-    <div class="cart-header">
-      <h3>🛍️ Keranjang Belanja</h3>
-      <button id="close-cart">✖</button>
-    </div>
-    <div id="cart-items" class="cart-items"></div>
-    <div class="cart-footer">
-      <p><strong>Total: Rp <span id="cart-total">0</span></strong></p>
-      <button id="checkout-btn" class="checkout-btn">Checkout</button>
-    </div>
-  </div>
-  <!-- Popup Checkout -->
-   <!-- Popup Checkout -->
-<div id="checkout-popup" class="checkout-popup">
-  <div class="popup-content">
-    <h3>🧾 Konfirmasi Pembelian</h3>
-
-    <label>Nama Lengkap:</label>
-    <input type="text" id="client-name" placeholder="Masukkan nama Anda">
-
-    <label>Email:</label>
-    <input type="email" id="client-email" placeholder="Masukkan email Anda">
-
-    <label>Nomor Telepon:</label>
-    <input type="tel" id="client-phone" placeholder="Masukkan nomor telepon Anda">
-
-    <label>Metode Pembayaran:</label>
-    <select id="payment-method">
-      <option value="">-- Pilih Metode Pembayaran --</option>
-      <option value="credit_card">💳 Credit Card (Midtrans)</option>
-      <option value="bca_va">🏦 BCA Virtual Account</option>
-      <option value="bni_va">🏦 BNI Virtual Account</option>
-      <option value="bri_va">🏦 BRI Virtual Account</option>
-      <option value="mandiri_va">🏦 Mandiri Virtual Account</option>
-      <option value="gopay">📱 GoPay</option>
-      <option value="shopeepay">🛍️ ShopeePay</option>
-      <option value="dana">💙 DANA</option>
-      <option value="linkaja">🔗 LinkAja</option>
-      <option value="ovo">🟠 OVO</option>
-      <option value="bri">Transfer Bank BRI (Manual)</option>
-      <option value="bni">Transfer Bank BNI (Manual)</option>
-    </select>
-
-    <!-- Bagian info pembayaran -->
-    <div id="payment-info" class="payment-info" style="display:none;">
-      <p><strong>Informasi Pembayaran:</strong></p>
-      <p id="payment-number">-</p>
-      <p><strong>Total Pembayaran:</strong></p>
-      <p id="payment-total">Rp 0</p>
-      <div id="midtrans-payment" style="display:none;">
-        <p><strong>💡 Instruksi:</strong></p>
-        <p id="payment-instructions">-</p>
-      </div>
-    </div>
-
-    <!-- Midtrans Payment Button -->
-    <div id="midtrans-payment-btn" style="display:none; margin-top: 15px;">
-      <button id="pay-button" class="pay-button">💳 Bayar Sekarang</button>
-    </div>
-
-    <div class="popup-buttons">
-      <button id="confirm-checkout">Konfirmasi</button>
-      <button id="cancel-checkout">Batal</button>
-    </div>
-  </div>
-</div>
-
-<!-- Popup Summary Checkout -->
-<div id="checkout-summary-popup" class="checkout-summary-popup">
-  <div class="summary-popup-content">
-    <div class="summary-header">
-      <h3>🎉 Checkout Berhasil!</h3>
-      <button id="close-summary" class="close-summary-btn">✖</button>
-    </div>
-    <div class="summary-body">
-      <div class="summary-info">
-        <p class="summary-title">Total Barang yang Dicheckout:</p>
-        <p class="summary-count" id="summary-count">0 barang</p>
-      </div>
-      <div class="summary-items">
-        <p class="summary-title">Daftar Produk:</p>
-        <div id="summary-items-list" class="summary-items-list"></div>
-      </div>
-      <div class="summary-total">
-        <p class="summary-title">Total Pembayaran:</p>
-        <p class="summary-amount" id="summary-total">Rp 0</p>
+      <div id="cart-items" class="cart-items"></div>
+      <div class="cart-footer">
+        <p>
+          <strong>Total: Rp <span id="cart-total">0</span></strong>
+        </p>
+        <button id="checkout-btn" class="checkout-btn">Checkout</button>
       </div>
     </div>
-    <div class="summary-footer">
-      <button id="close-summary-btn" class="summary-close-btn">Tutup</button>
-    </div>
-  </div>
-</div>
+    <!-- Popup Checkout -->
+    <!-- Popup Checkout -->
+    <div id="checkout-popup" class="checkout-popup">
+      <div class="popup-content">
+        <h3>🧾 Konfirmasi Pembelian</h3>
+        <label>Nama Lengkap:</label>
+        <input type="text" id="client-name" placeholder="Masukkan nama Anda" />
 
-  <!-- Chat Support Widget -->
-  <div id="chat-widget" class="chat-widget">
-    <div id="chat-button" class="chat-button">
-      💬
-    </div>
-    <div id="chat-panel" class="chat-panel">
-      <div class="chat-header">
-        <h3>💖 Chat Support</h3>
-        <button id="close-chat">✖</button>
+        <label>Email:</label>
+        <input
+          type="email"
+          id="client-email"
+          placeholder="Masukkan email Anda"
+        />
+
+        <label>Nomor Telepon:</label>
+        <input
+          type="tel"
+          id="client-phone"
+          placeholder="Masukkan nomor telepon Anda"
+        />
+
+        <label>Metode Pembayaran:</label>
+        <select id="payment-method">
+          <option value="">-- Pilih Metode Pembayaran --</option>
+          <option value="credit_card">💳 Credit Card (Midtrans)</option>
+          <option value="bca_va">🏦 BCA Virtual Account</option>
+          <option value="bni_va">🏦 BNI Virtual Account</option>
+          <option value="bri_va">🏦 BRI Virtual Account</option>
+          <option value="mandiri_va">🏦 Mandiri Virtual Account</option>
+          <option value="gopay">📱 GoPay</option>
+          <option value="shopeepay">🛍️ ShopeePay</option>
+          <option value="dana">💙 DANA</option>
+          <option value="linkaja">🔗 LinkAja</option>
+          <option value="ovo">🟠 OVO</option>
+          <option value="bri">Transfer Bank BRI (Manual)</option>
+          <option value="bni">Transfer Bank BNI (Manual)</option>
+        </select>
+
+        <!-- Bagian info pembayaran -->
+        <div id="payment-info" class="payment-info" style="display: none">
+          <p><strong>Informasi Pembayaran:</strong></p>
+          <p id="payment-number">-</p>
+          <p><strong>Total Pembayaran:</strong></p>
+          <p id="payment-total">Rp 0</p>
+          <div id="midtrans-payment" style="display: none">
+            <p><strong>💡 Instruksi:</strong></p>
+            <p id="payment-instructions">-</p>
+          </div>
+        </div>
+
+        <!-- Midtrans Payment Button -->
+        <div id="midtrans-payment-btn" style="display: none; margin-top: 15px">
+          <button id="pay-button" class="pay-button">💳 Bayar Sekarang</button>
+        </div>
+
+        <div class="popup-buttons">
+          <button id="confirm-checkout">Konfirmasi</button>
+          <button id="cancel-checkout">Batal</button>
+        </div>
       </div>
-      <div id="chat-messages" class="chat-messages">
-        <div class="message bot-message">
-          <div class="message-content">
-            <p>Hai! 👋 Saya adalah asisten virtual BraveVerse Beauty. Ada yang bisa saya bantu hari ini?</p>
+    </div>
+
+    <!-- Popup Summary Checkout -->
+    <div id="checkout-summary-popup" class="checkout-summary-popup">
+      <div class="summary-popup-content">
+        <div class="summary-header">
+          <h3>🎉 Checkout Berhasil!</h3>
+          <button id="close-summary" class="close-summary-btn">✖</button>
+        </div>
+        <div class="summary-body">
+          <div class="summary-info">
+            <p class="summary-title">Total Barang yang Dicheckout:</p>
+            <p class="summary-count" id="summary-count">0 barang</p>
+          </div>
+          <div class="summary-items">
+            <p class="summary-title">Daftar Produk:</p>
+            <div id="summary-items-list" class="summary-items-list"></div>
+          </div>
+          <div class="summary-total">
+            <p class="summary-title">Total Pembayaran:</p>
+            <p class="summary-amount" id="summary-total">Rp 0</p>
+          </div>
+        </div>
+        <div class="summary-footer">
+          <button id="close-summary-btn" class="summary-close-btn">
+            Tutup
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat Support Widget -->
+    <div id="chat-widget" class="chat-widget">
+      <div id="chat-button" class="chat-button">💬</div>
+      <div id="chat-panel" class="chat-panel">
+        <div class="chat-header">
+          <h3>💖 Chat Support</h3>
+          <button id="close-chat">✖</button>
+        </div>
+        <div id="chat-messages" class="chat-messages">
+          <div class="message bot-message">
+            <div class="message-content">
+              <p>
+                Hai! 👋 Saya adalah asisten virtual BraveVerse Beauty. Ada yang
+                bisa saya bantu hari ini?
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="chat-input-area">
+          <div class="quick-replies">
+            <button class="quick-reply-btn" data-reply="produk">
+              Produk Terbaru
+            </button>
+            <button class="quick-reply-btn" data-reply="diskon">
+              Info Diskon
+            </button>
+            <button class="quick-reply-btn" data-reply="pengiriman">
+              Pengiriman
+            </button>
+            <button class="quick-reply-btn" data-reply="kontak">
+              Kontak Kami
+            </button>
+          </div>
+          <div class="chat-input-container">
+            <input
+              type="text"
+              id="chat-input"
+              placeholder="Ketik pesan Anda..."
+            />
+            <button id="send-message">Kirim</button>
           </div>
         </div>
       </div>
-      <div class="chat-input-area">
-        <div class="quick-replies">
-          <button class="quick-reply-btn" data-reply="produk">Produk Terbaru</button>
-          <button class="quick-reply-btn" data-reply="diskon">Info Diskon</button>
-          <button class="quick-reply-btn" data-reply="pengiriman">Pengiriman</button>
-          <button class="quick-reply-btn" data-reply="kontak">Kontak Kami</button>
-        </div>
-        <div class="chat-input-container">
-          <input type="text" id="chat-input" placeholder="Ketik pesan Anda..." />
-          <button id="send-message">Kirim</button>
-        </div>
-      </div>
     </div>
-  </div>
 
-  <script src="E-bussines.js" defer></script>
-</body>
+    <script src="E-bussines.js" defer></script>
+  </body>
 </html>
