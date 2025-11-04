@@ -42,7 +42,7 @@ app.post("/create-transaction", async (req, res) => {
       "base64"
     );
     const midtransRes = await axios.post(
-      "https://app.sandbox.midtrans.com/snap/v1/transactions", // <--- Hapus spasi
+      "https://app.sandbox.midtrans.com/snap/v1/transactions",
       payload,
       {
         headers: {
