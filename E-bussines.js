@@ -1,6 +1,6 @@
 // ===== KERANJANG =====
 let cart = [];
-let totalCheckoutItems = 0; 
+let totalCheckoutItems = 0;
 
 // ===== DATA PRODUK PER BRAND =====
 const brandProducts = {
@@ -302,7 +302,9 @@ async function processMidtransPayment() {
   try {
     const transactionData = createMidtransTransaction();
 
-    const response = await fetch("http://127.0.0.1:3000/create-transaction", {
+    // Di dalam processMidtransPayment()
+    const response = await fetch("/create-transaction", {
+      // <-- BENAR
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -332,8 +334,7 @@ async function processMidtransPayment() {
       try {
         const errorJson = JSON.parse(errorText);
         errorMessage = errorJson.details || errorJson.error || errorMessage;
-      } catch (e) {
-      }
+      } catch (e) {}
       throw new Error(errorMessage);
     }
 
@@ -837,7 +838,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-
   // Event listener untuk brand card click
   const brandCards = document.querySelectorAll(".clickable-brand");
   brandCards.forEach((card) => {
@@ -1089,7 +1089,7 @@ function filterProducts() {
       selectedSkinType === "" ||
       (productData &&
         productData.skinTypes &&
-        productData.skinTypes.includes(selectedSkinType)); 
+        productData.skinTypes.includes(selectedSkinType));
 
     // Show/hide card based on filters
     if (matchesSearch && matchesSkinType) {
