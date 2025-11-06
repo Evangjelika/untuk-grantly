@@ -303,14 +303,17 @@ async function processMidtransPayment() {
     const transactionData = createMidtransTransaction();
 
     // Di dalam processMidtransPayment()
-    const response = await fetch("/create-transaction", {
-      // <-- BENAR
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(transactionData),
-    });
+    const response = await fetch(
+      "http://localhost:3001/create-transaction",
+      {
+        // <-- BENAR
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(transactionData),
+      }
+    );
 
     console.log("Response Status:", response.status);
 

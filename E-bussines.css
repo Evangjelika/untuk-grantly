@@ -1223,20 +1223,6 @@ footer::before {
   overflow: hidden;
 }
 
-.popup-content::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(
-    circle,
-    rgba(255, 182, 193, 0.1) 0%,
-    transparent 70%
-  );
-  animation: rotate 20s linear infinite;
-}
 
 .popup-content h3 {
   color: #d63384;

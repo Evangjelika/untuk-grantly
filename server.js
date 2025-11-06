@@ -8,7 +8,7 @@ const cors = require("cors");
 const midtransClient = require("midtrans-client");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // Middleware
 app.use(cors());
@@ -63,7 +63,6 @@ app.post("/create-transaction", async (req, res) => {
   }
 });
 
-// midtrans-backend-example.js
 
 // Webhook (opsional, tetapi disarankan)
 app.post("/notification-handler", (req, res) => {
