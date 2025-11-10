@@ -13,14 +13,13 @@ const PORT = process.env.PORT || 3001;
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.static(".")); 
-
+app.use(express.static("."));
 
 // Midtrans Configuration
 const snap = new midtransClient.Snap({
-  isProduction: false, 
-  serverKey: process.env.MIDTRANS_SERVER_KEY, 
-  clientKey: process.env.MIDTRANS_CLIENT_KEY, 
+  isProduction: false,
+  serverKey: process.env.MIDTRANS_SERVER_KEY,
+  clientKey: process.env.MIDTRANS_CLIENT_KEY,
 });
 
 // Endpoint untuk mendapatkan snap token — SESUAI DENGAN FRONTEND ANDA
@@ -62,7 +61,6 @@ app.post("/create-transaction", async (req, res) => {
     });
   }
 });
-
 
 // Webhook (opsional, tetapi disarankan)
 app.post("/notification-handler", (req, res) => {

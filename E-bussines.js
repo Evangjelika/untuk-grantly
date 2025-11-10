@@ -2,6 +2,22 @@
 let cart = [];
 let totalCheckoutItems = 0;
 
+// ===== SIMPLE AUTH (NO BACKEND) =====
+const AUTH_USERNAME = "user";
+const AUTH_PASSWORD = "user123"; // tidak digunakan di halaman utama, tetapi dibiarkan konsisten
+const AUTH_STORAGE_KEY = "authUser";
+
+function isLoggedIn() {
+  try {
+    const raw = localStorage.getItem(AUTH_STORAGE_KEY);
+    if (!raw) return false;
+    const session = JSON.parse(raw);
+    return Boolean(session && session.username === AUTH_USERNAME);
+  } catch (_) {
+    return false;
+  }
+}
+
 // ===== DATA PRODUK PER BRAND =====
 const brandProducts = {
   SKIN1004: [
@@ -303,17 +319,14 @@ async function processMidtransPayment() {
     const transactionData = createMidtransTransaction();
 
     // Di dalam processMidtransPayment()
-    const response = await fetch(
-      "http://localhost:3001/create-transaction",
-      {
-        // <-- BENAR
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(transactionData),
-      }
-    );
+    const response = await fetch("http://localhost:3001/create-transaction", {
+      // <-- BENAR
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(transactionData),
+    });
 
     console.log("Response Status:", response.status);
 
@@ -479,8 +492,14 @@ function initAddToCartButtons() {
 
 // Jalankan fungsi setelah halaman dimuat
 document.addEventListener("DOMContentLoaded", () => {
+  if (!isLoggedIn()) {
+    window.location.href = "login.html";
+    return;
+  }
+  initChat();
+  initSearchAndFilter();
   initAddToCartButtons();
-  updateCart(); // Initialize cart counter badge on page load
+  updateCart();
 });
 
 // ===== UPDATE ISI KERANJANG =====
@@ -552,6 +571,11 @@ if (openCartBtn && closeCartBtn) {
 // ===== CHECKOUT =====
 // Checkout - Event listener untuk tombol checkout
 document.getElementById("checkout-btn").addEventListener("click", () => {
+  if (!isLoggedIn()) {
+    alert("Silakan login terlebih dahulu untuk melanjutkan checkout.");
+    window.location.href = "login.html";
+    return;
+  }
   if (cart.length === 0) {
     alert("Keranjang masih kosong 💕");
   } else {
@@ -1146,8 +1170,4 @@ function clearFilters() {
   filterProducts();
 }
 
-// Initialize chat when DOM is loaded
-document.addEventListener("DOMContentLoaded", () => {
-  initChat();
-  initSearchAndFilter();
-});
+// Initialize chat when DOM is loaded (handled earlier with auth redirect)

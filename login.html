@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Login - GlowSkin</title>
+    <link rel="stylesheet" href="E-bussines.css"/>
+  </head>
+  <body class="login-page">
+    <div class="login-hero">
+      <div class="login-hero-badge">BraveVerse'Beauty</div>
+      <h1>Be Bold. Be You. Be BraveVerse</h1>
+      <p>Masuk untuk melanjutkan belanja skincare favoritmu ✨</p>
+    </div>
+
+    <div class="login-wrapper">
+      <div class="login-card">
+        <h2>Masuk ke GlowSkin</h2>
+
+        <div class="field">
+          <label for="login-username">Username</label>
+          <input id="login-username" type="text" placeholder="user" autocomplete="username"/>
+        </div>
+
+        <div class="field">
+          <label for="login-password">Password</label>
+          <input id="login-password" type="password" placeholder="••••••••" autocomplete="current-password"/>
+        </div>
+
+        <div id="login-error" class="login-error"></div>
+
+        <button id="login-submit" class="login-button">Masuk</button>
+        <p class="hint">Demo akun: <strong>user</strong> / <strong>user123</strong></p>
+      </div>
+    </div>
+
+    <script>
+      const AUTH_USERNAME = "user";
+      const AUTH_PASSWORD = "user123";
+      const AUTH_STORAGE_KEY = "authUser";
+
+      function isLoggedIn() {
+        try {
+          const raw = localStorage.getItem(AUTH_STORAGE_KEY);
+          if (!raw) return false;
+          const session = JSON.parse(raw);
+          return Boolean(session && session.username === AUTH_USERNAME);
+        } catch (_) {
+          return false;
+        }
+      }
+
+      function setLoggedIn(username) {
+        localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify({ username }));
+      }
+
+      if (isLoggedIn()) {
+        window.location.href = "E-bussins.html";
+      }
+
+      function submitLogin() {
+        const username = (document.getElementById("login-username").value || "").trim();
+        const password = (document.getElementById("login-password").value || "").trim();
+        const err = document.getElementById("login-error");
+
+        if (!username || !password) {
+          err.textContent = "Username dan password wajib diisi.";
+          return;
+        }
+        if (username !== AUTH_USERNAME || password !== AUTH_PASSWORD) {
+          err.textContent = "Username atau password salah.";
+          return;
+        }
+
+        setLoggedIn(username);
+        window.location.href = "E-bussins.html";
+      }
+
+      document.getElementById("login-submit").addEventListener("click", submitLogin);
+      document.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") submitLogin();
+      });
+    </script>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Login - GlowSkin</title>
+    <link rel="stylesheet" href="E-bussines.css"/>
+  </head>
+  <body class="login-page">
+    <div class="login-hero">
+      <div class="login-hero-badge">BraveVerse'Beauty</div>
+      <h1>Be Bold. Be You. Be BraveVerse</h1>
+      <p>Masuk untuk melanjutkan belanja skincare favoritmu ✨</p>
+    </div>
+
+    <div class="login-wrapper">
+      <div class="login-card">
+        <h2>Masuk ke GlowSkin</h2>
+
+        <div class="field">
+          <label for="login-username">Username</label>
+          <input id="login-username" type="text" placeholder="user" autocomplete="username"/>
+        </div>
+
+        <div class="field">
+          <label for="login-password">Password</label>
+          <input id="login-password" type="password" placeholder="••••••••" autocomplete="current-password"/>
+        </div>
+
+        <div id="login-error" class="login-error"></div>
+
+        <button id="login-submit" class="login-button">Masuk</button>
+        <p class="hint">Demo akun: <strong>user</strong> / <strong>user123</strong></p>
+      </div>
+    </div>
+
+    <script>
+      // Harus cocok dengan E-bussines.js
+      const AUTH_USERNAME = "user";
+      const AUTH_PASSWORD = "user123";
+      const AUTH_STORAGE_KEY = "authUser";
+
+      function isLoggedIn() {
+        try {
+          const raw = localStorage.getItem(AUTH_STORAGE_KEY);
+          if (!raw) return false;
+          const session = JSON.parse(raw);
+          return Boolean(session && session.username === AUTH_USERNAME);
+        } catch (_) {
+          return false;
+        }
+      }
+
+      function setLoggedIn(username) {
+        localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify({ username }));
+      }
+
+      // Jika sudah login → langsung ke halaman utama
+      if (isLoggedIn()) {
+        window.location.href = "E-bussins.html";
+      }
+
+      function submitLogin() {
+        const username = (document.getElementById("login-username").value || "").trim();
+        const password = (document.getElementById("login-password").value || "").trim();
+        const err = document.getElementById("login-error");
+
+        if (!username || !password) {
+          err.textContent = "Username dan password wajib diisi.";
+          return;
+        }
+        if (username !== AUTH_USERNAME || password !== AUTH_PASSWORD) {
+          err.textContent = "Username atau password salah.";
+          return;
+        }
+
+        setLoggedIn(username);
+        window.location.href = "E-bussins.html";
+      }
+
+      document.getElementById("login-submit").addEventListener("click", submitLogin);
+      document.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") submitLogin();
+      });
+    </script>
+  </body>
+</html>

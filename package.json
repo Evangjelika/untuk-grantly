@@ -4,7 +4,7 @@
   "description": "E-commerce website with Midtrans payment integration",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node midtrans-backend-example.js",
     "dev": "nodemon server.js"
   },
   "dependencies": {
