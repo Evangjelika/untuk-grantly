@@ -960,11 +960,38 @@ function sendMessage() {
   // Clear input
   chatInput.value = "";
 
-  // Generate bot response
-  setTimeout(() => {
-    const response = generateResponse(message);
-    addMessage(response, "bot");
-  }, 500);
+  // If LLM hook is present, use Gemini; otherwise fallback to local rules
+  if (typeof window.requestLLMResponse === "function") {
+    // show typing indicator
+    const typingText = "Mengetik... ✍️";
+    const typingDiv = document.createElement("div");
+    typingDiv.className = "message bot-message";
+    const content = document.createElement("div");
+    content.className = "message-content";
+    content.textContent = typingText;
+    typingDiv.appendChild(content);
+    document.getElementById("chat-messages").appendChild(typingDiv);
+    scrollToBottom();
+
+    window.requestLLMResponse(message, function (reply) {
+      // replace typing with final reply
+      content.textContent = "";
+      const lines = String(reply || "").split("\n");
+      lines.forEach((line, idx) => {
+        const p = document.createElement("p");
+        p.textContent = line;
+        if (idx < lines.length - 1) p.style.marginBottom = "8px";
+        content.appendChild(p);
+      });
+      scrollToBottom();
+    });
+  } else {
+    // Generate bot response (local)
+    setTimeout(() => {
+      const response = generateResponse(message);
+      addMessage(response, "bot");
+    }, 500);
+  }
 }
 
 // Handle quick reply

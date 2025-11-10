@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="id">
   <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - GlowSkin</title>
-    <link rel="stylesheet" href="E-bussines.css"/>
+    <link rel="stylesheet" href="E-bussines.css" />
   </head>
   <body class="login-page">
     <div class="login-hero">
@@ -19,18 +19,27 @@
 
         <div class="field">
           <label for="login-username">Username</label>
-          <input id="login-username" type="text" placeholder="user" autocomplete="username"/>
+          <input
+            id="login-username"
+            type="text"
+            placeholder="user"
+            autocomplete="username"
+          />
         </div>
 
         <div class="field">
           <label for="login-password">Password</label>
-          <input id="login-password" type="password" placeholder="••••••••" autocomplete="current-password"/>
+          <input
+            id="login-password"
+            type="password"
+            placeholder="••••••••"
+            autocomplete="current-password"
+          />
         </div>
 
         <div id="login-error" class="login-error"></div>
 
         <button id="login-submit" class="login-button">Masuk</button>
-        <p class="hint">Demo akun: <strong>user</strong> / <strong>user123</strong></p>
       </div>
     </div>
 
@@ -55,12 +64,16 @@
       }
 
       if (isLoggedIn()) {
-        window.location.href = "E-bussins.html";
+        window.location.href = "index.html";
       }
 
       function submitLogin() {
-        const username = (document.getElementById("login-username").value || "").trim();
-        const password = (document.getElementById("login-password").value || "").trim();
+        const username = (
+          document.getElementById("login-username").value || ""
+        ).trim();
+        const password = (
+          document.getElementById("login-password").value || ""
+        ).trim();
         const err = document.getElementById("login-error");
 
         if (!username || !password) {
@@ -73,10 +86,12 @@
         }
 
         setLoggedIn(username);
-        window.location.href = "E-bussins.html";
+        window.location.href = "index.html";
       }
 
-      document.getElementById("login-submit").addEventListener("click", submitLogin);
+      document
+        .getElementById("login-submit")
+        .addEventListener("click", submitLogin);
       document.addEventListener("keypress", (e) => {
         if (e.key === "Enter") submitLogin();
       });
@@ -86,10 +101,10 @@
 <!DOCTYPE html>
 <html lang="id">
   <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - GlowSkin</title>
-    <link rel="stylesheet" href="E-bussines.css"/>
+    <link rel="stylesheet" href="E-bussines.css" />
   </head>
   <body class="login-page">
     <div class="login-hero">
@@ -104,18 +119,30 @@
 
         <div class="field">
           <label for="login-username">Username</label>
-          <input id="login-username" type="text" placeholder="user" autocomplete="username"/>
+          <input
+            id="login-username"
+            type="text"
+            placeholder="user"
+            autocomplete="username"
+          />
         </div>
 
         <div class="field">
           <label for="login-password">Password</label>
-          <input id="login-password" type="password" placeholder="••••••••" autocomplete="current-password"/>
+          <input
+            id="login-password"
+            type="password"
+            placeholder="••••••••"
+            autocomplete="current-password"
+          />
         </div>
 
         <div id="login-error" class="login-error"></div>
 
         <button id="login-submit" class="login-button">Masuk</button>
-        <p class="hint">Demo akun: <strong>user</strong> / <strong>user123</strong></p>
+        <p class="hint">
+          Demo akun: <strong>user</strong> / <strong>user123</strong>
+        </p>
       </div>
     </div>
 
@@ -142,12 +169,16 @@
 
       // Jika sudah login → langsung ke halaman utama
       if (isLoggedIn()) {
-        window.location.href = "E-bussins.html";
+        window.location.href = "index.html";
       }
 
       function submitLogin() {
-        const username = (document.getElementById("login-username").value || "").trim();
-        const password = (document.getElementById("login-password").value || "").trim();
+        const username = (
+          document.getElementById("login-username").value || ""
+        ).trim();
+        const password = (
+          document.getElementById("login-password").value || ""
+        ).trim();
         const err = document.getElementById("login-error");
 
         if (!username || !password) {
@@ -160,10 +191,12 @@
         }
 
         setLoggedIn(username);
-        window.location.href = "E-bussins.html";
+        window.location.href = "index.html";
       }
 
-      document.getElementById("login-submit").addEventListener("click", submitLogin);
+      document
+        .getElementById("login-submit")
+        .addEventListener("click", submitLogin);
       document.addEventListener("keypress", (e) => {
         if (e.key === "Enter") submitLogin();
       });
